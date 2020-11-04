@@ -6,7 +6,9 @@
       <router-link to="/signup">Signup</router-link> |
       <router-link to="/login">Login</router-link> |
       <router-link to="/logout">Logout</router-link> |
-      <router-link to="/boards">Your Boards</router-link>
+      <router-link to="/boards">Your Boards</router-link> |
+      <router-link to="/boards/new">Create New Board</router-link> 
+      
     </div>
     <router-view/>
   </div>

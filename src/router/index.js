@@ -6,6 +6,7 @@ import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import BoardsIndex from "../views/BoardsIndex.vue";
+import BoardsNew from "../views/BoardsNew.vue";
 
 Vue.use(VueRouter);
 
@@ -43,6 +44,11 @@ const routes = [
     name: "boards-index",
     component: BoardsIndex,
   },
+  {
+    path: "/boards/new",
+    name: "boards-new",
+    component: BoardsNew
+  }
 ];
 
 const router = new VueRouter({
