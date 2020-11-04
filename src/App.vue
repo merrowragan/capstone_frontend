@@ -9,6 +9,7 @@
       <router-link to="/boards">Your Boards</router-link> |
       <router-link to="/boards/new">Create New Board</router-link> 
       
+      
     </div>
     <router-view/>
   </div>

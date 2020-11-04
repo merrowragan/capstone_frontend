@@ -7,6 +7,7 @@ import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import BoardsIndex from "../views/BoardsIndex.vue";
 import BoardsNew from "../views/BoardsNew.vue";
+import BoardsEdit from "../views/BoardsEdit.vue";
 
 Vue.use(VueRouter);
 
@@ -48,6 +49,11 @@ const routes = [
     path: "/boards/new",
     name: "boards-new",
     component: BoardsNew
+  },
+  {
+    path: "/boards/:id/edit", 
+    name: "boards-edit",
+    component: BoardsEdit
   }
 ];
 
