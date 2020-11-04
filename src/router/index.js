@@ -8,6 +8,7 @@ import Logout from "../views/Logout.vue";
 import BoardsIndex from "../views/BoardsIndex.vue";
 import BoardsNew from "../views/BoardsNew.vue";
 import BoardsEdit from "../views/BoardsEdit.vue";
+import BoardsShow from "../views/BoardsShow.vue";
 
 Vue.use(VueRouter);
 
@@ -54,6 +55,11 @@ const routes = [
     path: "/boards/:id/edit", 
     name: "boards-edit",
     component: BoardsEdit
+  },
+  {
+    path: "/boards/:id",
+    name: "boards-show",
+    component: BoardsShow
   }
 ];
 

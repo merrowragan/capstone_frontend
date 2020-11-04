@@ -8,6 +8,8 @@
     <div class="form-group">
       <label>Description:</label>
       <input type="text" class="form-control" v-model="board.description">
+      <button v-on:click="updateBoard()">Save Changes</button>
+      <button v-on:click="destroyBoard()">Delete Board</button>
     </div>
   </div>
 </template>
@@ -38,8 +40,19 @@ export default {
       };
       axios.patch(`/api/boards/${this.board.id}`, params).then((response) => {
         this.$router.push(`/boards/${this.board.id}`);
+      })
+      .catch(error => {
+        this.errors = error.response,data.errors;
       });
     },
+    destroyBoard: function () {
+      if(confirm("Are you sure you want to delete this board?")) {
+        axios.delete(`/api/boards/${this.board.id}`).then(response => {
+          console.log("Board deleted", response.data);
+          this.$router.push("/boards");
+        })
+      }
+    }
   },
 };
 </script>
