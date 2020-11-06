@@ -15,6 +15,24 @@
   </div>
 </template>
 
+<script>
+export default {
+  data: function() {
+    return {
+      flashMessage: "",
+    };
+  },
+  methods: {
+    isLoggedIn: function() {
+      return localStorage.getItem("jwt");
+    },
+    getUserId: function() {
+      return parseInt(localStorage.getItem("user_id"));
+    },
+  },
+};
+</script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

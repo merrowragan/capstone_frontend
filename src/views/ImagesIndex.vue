@@ -1,7 +1,7 @@
 <template>
   <div class="images-index">
     <div v-for="image in images">
-      <p>Url: {{ image.url }}</p>
+      <img :src="image.url" alt="">
     </div>
   </div>
 </template>

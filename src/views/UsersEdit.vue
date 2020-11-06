@@ -1,28 +1,31 @@
 <template>
   <div class="users-edit">
-    <h1>Edit Account Details</h1>
-    <div class="form-group">
-      <label>Name:</label>
-      <input type="text" class="form-control" v-model="user.name" />
-    </div>
-    <div class="form-group">
+    <form v-on:submit.prevent="updateUser()">
+      <h1>Edit Account Details</h1>
       <div class="form-group">
-        <label>Pronouns:</label>
-        <input type="text" class="form-control" v-model="user.pronouns" />
+        <label>Name:</label>
+        <input type="text" class="form-control" v-model="user.name" />
       </div>
       <div class="form-group">
-        <label>Gender:</label>
-        <input type="text" class="form-control" v-model="user.gender" />
+        <div class="form-group">
+          <label>Pronouns:</label>
+          <input type="text" class="form-control" v-model="user.pronouns" />
+        </div>
+        <div class="form-group">
+          <label>Gender:</label>
+          <input type="text" class="form-control" v-model="user.gender" />
+        </div>
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="text" class="form-control" v-model="user.email" />
+        </div>
+        <label>Password:</label>
+        <input type="text" class="form-control" v-model="user.password" />
+        <br />
+        <button v-on:click="updateUser()">Save Changes</button> <br />
+        <button v-on:click="destroyUser()">Delete Account</button> <br />
       </div>
-      <div class="form-group">
-        <label>Email:</label>
-        <input type="text" class="form-control" v-model="user.email" />
-      </div>
-      <label>Password:</label>
-      <input type="text" class="form-control" v-model="user.password" /> <br>
-      <button v-on:click="updateUser()">Save Changes</button> <br>
-      <button v-on:click="destroyUser()">Delete Account</button> <br>
-    </div>
+    </form>
   </div>
 </template>
 
@@ -50,8 +53,7 @@ export default {
         name: this.user.name,
         gender: this.user.gender,
         pronouns: this.user.pronouns,
-        email: this.user.email
-
+        email: this.user.email,
       };
       axios
         .patch(`/api/users/${this.user.id}`, params)

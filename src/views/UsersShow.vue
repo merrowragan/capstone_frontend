@@ -1,9 +1,15 @@
 <template>
   <div class="users-show">
+    <p v-if="$parent.isLoggedIn()">Profile</p>
+
     <h1>{{ user.name }}</h1>
     <p>{{ user.email }}</p>
     <p>{{ user.pronouns }}</p>
     <p>{{ user.gender }}</p>
+
+    <router-link v-if="user.id === $parent.getUserId()" :to="`/users/${user.id}/edit`">Edit Information</router-link>
+
+
   </div>
 </template>
 
