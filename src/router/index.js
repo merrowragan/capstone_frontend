@@ -5,10 +5,13 @@ import Home from "../views/Home.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
+
 import BoardsIndex from "../views/BoardsIndex.vue";
 import BoardsNew from "../views/BoardsNew.vue";
 import BoardsEdit from "../views/BoardsEdit.vue";
 import BoardsShow from "../views/BoardsShow.vue";
+
+import UsersShow from "../views/UsersShow.vue";
 
 Vue.use(VueRouter);
 
@@ -60,6 +63,11 @@ const routes = [
     path: "/boards/:id",
     name: "boards-show",
     component: BoardsShow
+  },
+  {
+    path: "/users/:id",
+    name: "users-show",
+    component: UsersShow
   }
 ];
 
