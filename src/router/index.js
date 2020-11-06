@@ -12,6 +12,7 @@ import BoardsEdit from "../views/BoardsEdit.vue";
 import BoardsShow from "../views/BoardsShow.vue";
 
 import UsersShow from "../views/UsersShow.vue";
+import UsersEdit from "../views/UsersEdit.vue";
 
 import ImagesIndex from "../views/ImagesIndex.vue";
 
@@ -75,6 +76,11 @@ const routes = [
     path: "/images",
     name: "images-index",
     component: ImagesIndex
+  },
+  {
+    path: "/users/:id/edit",
+    name: "users-edit",
+    component: UsersEdit
   }
 ];
 

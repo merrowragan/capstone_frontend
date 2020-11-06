@@ -8,9 +8,8 @@
       <router-link to="/logout">Logout</router-link> |
       <router-link to="/boards">Your Boards</router-link> |
       <router-link to="/boards/new">Create New Board</router-link> |
-      <router-link to="/images">Explore Images</router-link>
-      
-      
+      <router-link to="/images">Explore Images</router-link> 
+     
     </div>
     <router-view/>
   </div>
