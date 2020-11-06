@@ -13,6 +13,8 @@ import BoardsShow from "../views/BoardsShow.vue";
 
 import UsersShow from "../views/UsersShow.vue";
 
+import ImagesIndex from "../views/ImagesIndex.vue";
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -68,6 +70,11 @@ const routes = [
     path: "/users/:id",
     name: "users-show",
     component: UsersShow
+  },
+  {
+    path: "/images",
+    name: "images-index",
+    component: ImagesIndex
   }
 ];
 
