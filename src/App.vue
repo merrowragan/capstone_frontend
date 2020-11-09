@@ -2,34 +2,31 @@
   <div id="app">
     <div id="nav">
       <li>
-      <router-link to="/">Home</router-link> 
-      </li>
-  
-      <!-- <router-link to="/about">About</router-link> | -->
-      <li v-if="!isLoggedIn()">
-      <router-link to="/signup">Signup</router-link> 
+        <router-link to="/">Home</router-link>
       </li>
       <li v-if="!isLoggedIn()">
-      <router-link to="/login">Login</router-link> 
+        <router-link to="/signup">Signup</router-link>
+      </li>
+      <li v-if="!isLoggedIn()">
+        <router-link to="/login">Login</router-link>
       </li>
       <li v-if="isLoggedIn()">
-      <router-link to="/logout">Logout</router-link> 
+        <router-link to="/logout">Logout</router-link>
       </li>
       <li>
-      <router-link to="/boards">Your Boards</router-link> 
+        <router-link to="/boards">Your Boards</router-link>
       </li>
       <li>
-      <router-link to="/boards/new">Create New Board</router-link> 
+        <router-link to="/boards/new">Create New Board</router-link>
       </li>
       <li>
-      <router-link to="/images">Explore Images</router-link> 
+        <router-link to="/images">Explore Images</router-link>
       </li>
-      <!-- <li>
-      <router-link to="/users">Your Profile</router-link> 
-      </li> -->
-     
+
+      <router-link v-if="isLoggedIn()" :to="`/users/${getUserId()}`">Your Profile</router-link>
+      
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -52,6 +49,9 @@ export default {
 </script>
 
 <style>
+img {
+  width: 250px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

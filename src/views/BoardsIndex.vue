@@ -3,6 +3,7 @@
     <div v-for="board in boards">
       <h2>Title: {{ board.title }}</h2>
       <p>Description: {{ board.description }}</p>
+      
     </div>
   </div>
 </template>

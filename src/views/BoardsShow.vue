@@ -2,6 +2,11 @@
   <div class="boards-show">
     <h1>{{ board.title }}</h1>
     <p>{{ board.description }}</p>
+
+    <div v-for="image in board.images">
+      <img :src="image.url" alt="">
+      <button v-on:click="removeImageFromBoard(image)">Remove</button>
+    </div>
   </div>
 </template>
 
@@ -22,6 +27,14 @@ export default {
       this.board = response.data
     })
   },
-  methods: {},
+  methods: {
+    removeImageFromBoard: function(image) {
+      axios.delete(`/api/board_images/${image.id}/${this.board.id}`).then( response => {
+        console.log("It is done.");
+        var index = this.board.images.indexOf(image);
+        this.board.images.splice(index, 1);
+      });
+    }
+  },
 };
 </script>
