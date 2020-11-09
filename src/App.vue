@@ -1,14 +1,32 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/signup">Signup</router-link> |
-      <router-link to="/login">Login</router-link> |
-      <router-link to="/logout">Logout</router-link> |
-      <router-link to="/boards">Your Boards</router-link> |
-      <router-link to="/boards/new">Create New Board</router-link> |
+      <li>
+      <router-link to="/">Home</router-link> 
+      </li>
+  
+      <!-- <router-link to="/about">About</router-link> | -->
+      <li v-if="!isLoggedIn()">
+      <router-link to="/signup">Signup</router-link> 
+      </li>
+      <li v-if="!isLoggedIn()">
+      <router-link to="/login">Login</router-link> 
+      </li>
+      <li v-if="isLoggedIn()">
+      <router-link to="/logout">Logout</router-link> 
+      </li>
+      <li>
+      <router-link to="/boards">Your Boards</router-link> 
+      </li>
+      <li>
+      <router-link to="/boards/new">Create New Board</router-link> 
+      </li>
+      <li>
       <router-link to="/images">Explore Images</router-link> 
+      </li>
+      <!-- <li>
+      <router-link to="/users">Your Profile</router-link> 
+      </li> -->
      
     </div>
     <router-view/>
