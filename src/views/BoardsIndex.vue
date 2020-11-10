@@ -1,8 +1,11 @@
 <template>
   <div class="boards-index">
     <div v-for="board in boards">
-      <h2>Title: {{ board.title }}</h2>
-      <p>Description: {{ board.description }}</p>
+      <h2>
+        <router-link :to="`/boards/${board.id}`">{{ board.title }}</router-link>
+      </h2>
+      <p>{{ board.description }}</p>
+      
       
     </div>
   </div>
