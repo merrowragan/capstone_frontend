@@ -19,8 +19,26 @@
           <label>Email:</label>
           <input type="text" class="form-control" v-model="user.email" />
         </div>
-        <label>Password:</label>
-        <input type="text" class="form-control" v-model="user.password" />
+        <div class="form-group">
+          <label>Current Password:</label>
+          <input
+            type="password"
+            class="form-control"
+            v-model="currentPassword"
+          />
+        </div>
+        <div class="form-group">
+          <label>New Password:</label>
+          <input type="password" class="form-control" v-model="newPassword" />
+        </div>
+        <div class="form-group">
+          <label>New Password Confirmation:</label>
+          <input
+            type="password"
+            class="form-control"
+            v-model="newPasswordConfirmation"
+          />
+        </div>
         <br />
         <button v-on:click="updateUser()">Save Changes</button> <br />
         <button v-on:click="destroyUser()">Delete Account</button> <br />
@@ -37,6 +55,9 @@ import axios from "axios";
 export default {
   data: function() {
     return {
+      currentPassword: "",
+      newPassword: "",
+      newPasswordConfirmation: "",
       user: {},
       errors: [],
     };
@@ -54,6 +75,9 @@ export default {
         gender: this.user.gender,
         pronouns: this.user.pronouns,
         email: this.user.email,
+        current_password: this.currentPassword,
+        new_password: this.newPassword,
+        new_password_confirmation: this.newPasswordConfirmation,
       };
       axios
         .patch(`/api/users/${this.user.id}`, params)
