@@ -24,6 +24,9 @@
       </li>
 
       <router-link v-if="isLoggedIn()" :to="`/users/${getUserId()}`">Your Profile</router-link>
+
+      
+
       
     </div>
     <router-view />
@@ -44,6 +47,10 @@ export default {
     getUserId: function() {
       return parseInt(localStorage.getItem("user_id"));
     },
+    getUserName: function() {
+      return parseInt(localStorage.getItem("name"));
+    }
+ 
   },
 };
 </script>

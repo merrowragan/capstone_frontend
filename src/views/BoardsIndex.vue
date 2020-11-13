@@ -5,6 +5,9 @@
         <router-link :to="`/boards/${board.id}`">{{ board.title }}</router-link>
       </h2>
       <p>{{ board.description }}</p>
+      <div>
+        <img :src="board.images[0].url" alt=""/> 
+       </div>
       
       
     </div>
@@ -15,11 +18,12 @@
 
 <script>
 import axios from "axios";
-
+ 
 export default {
   data: function() {
     return {
       boards: [],
+      images: []
     };
   },
   created: function() {
