@@ -4,11 +4,14 @@
       <h2>
         <router-link :to="`/boards/${board.id}`">{{ board.title }}</router-link>
       </h2>
-      <p>{{ board.description }}</p>
-      <div>
-        <img :src="board.images[0].url" alt=""/> 
-       </div>
-      
+      <!-- <p>{{ board.description }}</p>
+      <div v-if="board.images[0] == null">
+        <p>:)</p>
+      </div>
+      <div v-else> 
+        <img :src="board.images[0].url" alt=""/>
+      </div>
+       -->
       
     </div>
   </div>
