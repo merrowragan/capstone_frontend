@@ -1,35 +1,79 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <li>
-        <router-link to="/">Home</router-link>
-      </li>
-      <li v-if="!isLoggedIn()">
-        <router-link to="/signup">Signup</router-link>
-      </li>
-      <li v-if="!isLoggedIn()">
-        <router-link to="/login">Login</router-link>
-      </li>
-      <li v-if="isLoggedIn()">
-        <router-link to="/logout">Logout</router-link>
-      </li>
-      <li>
-        <router-link to="/boards">Your Boards</router-link>
-      </li>
-      <li>
-        <router-link to="/boards/new">Create New Board</router-link>
-      </li>
-      <li>
-        <router-link to="/images">Explore Images</router-link>
-      </li>
-
-      <router-link v-if="isLoggedIn()" :to="`/users/${getUserId()}`">Your Profile</router-link>
-
-      
-
-      
-    </div>
+    <nav class="navbar center navbar-expand-lg">
+      <div class="container flex-lg-column">
+        <div class="navbar-header">
+          <div class="navbar-brand">
+            <a href="index.html"
+              ><img
+                src="#"
+                srcset="/style/images/logo.png 1x, /style/images/logo@2x.png 2x"
+                alt=""
+            /></a>
+          </div>
+          <div class="navbar-hamburger ml-auto d-lg-none d-xl-none">
+            <button
+              class="hamburger animate"
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+            >
+              <span></span>
+            </button>
+          </div>
+        </div>
+        <!-- /.navbar-header -->
+        <div class="navbar-collapse collapse w-100 bg-light">
+          <ul
+            class="navbar-nav nav-fill w-100"
+            data-smartmenus-id="16055596499355562"
+          >
+            <li class="nav-item">
+              <router-link class="nav-link" to="/">Home</router-link>
+            </li>
+            <li v-if="!isLoggedIn()" class="nav-item">
+              <router-link class="nav-link" to="/signup">Signup</router-link>
+            </li>
+            <li v-if="!isLoggedIn()" class="nav-item">
+              <router-link class="nav-link" to="/login">Login</router-link>
+            </li>
+            <li v-if="isLoggedIn()" class="nav-item">
+              <router-link class="nav-link" to="/logout">Logout</router-link>
+            </li>
+            <li v-if="isLoggedIn()" class="nav-item">
+              <router-link class="nav-link" to="/boards">Your Boards</router-link>
+            </li>
+            <li v-if="isLoggedIn()" class="nav-item">
+              <router-link class="nav-link" to="/boards/new">Create New Board</router-link>
+            </li>
+            <li v-if="isLoggedIn()" class="nav-item">
+              <router-link class="nav-link" to="/images">Explore Images</router-link>
+            </li>
+            <li v-if="isLoggedIn()" class="nav-item">
+              <router-link class="nav-link" :to="`/users/${getUserId()}`">Your Profile</router-link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <router-view />
+    <footer class="dark-wrapper inverse-text">
+      <div class="container inner">
+        <div class="row d-md-flex align-items-md-center">
+          <div class="col-md-4 text-center text-md-left">
+            <p class="mb-0">© 2019 Missio. All rights reserved.</p>
+          </div>
+          <!--/column -->
+          <div class="col-md-4 text-center">
+            <img src="#" srcset="style/images/logo-light.png 1x, style/images/logo-light@2x.png 2x" alt="">
+          </div>
+          <!--/column -->
+        
+          <!--/column -->
+        </div>
+        <!--/.row -->
+      </div>
+      <!-- /.container -->
+    </footer>
   </div>
 </template>
 
@@ -47,36 +91,6 @@ export default {
     getUserId: function() {
       return parseInt(localStorage.getItem("user_id"));
     },
-    getUserName: function() {
-      return parseInt(localStorage.getItem("name"));
-    }
- 
   },
 };
 </script>
-
-<style>
-img {
-  width: 250px;
-}
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
