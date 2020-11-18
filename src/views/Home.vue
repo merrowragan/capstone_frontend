@@ -1,12 +1,100 @@
 <template>
   <div class="home">
+   
+    <div class="wrapper light-wrapper">
+      <div class="container inner pt-70">
+         <h3 v-if="$parent.isLoggedIn()" class="sub-heading2 text-center">{{generateSentence()}}</h3>
+          <h3 v-if="$parent.isLoggedIn()" class="sub-heading2 text-center">Your pronouns are: {{user.pronouns}}</h3>
+        <h1 class="heading text-center">Welcome to Butterfly Park!</h1>
+       
+           <h4 v-if="$parent.isLoggedIn()" class="text-center">This is your space to explore who you are, who you are becoming, and who you want to be.</h4>
+        <div class="space50"></div>
+        <div class="tiles grid">
 
-    <h3 v-if="$parent.isLoggedIn()">{{generateSentence()}}</h3>
-    <h3 v-if="$parent.isLoggedIn()">Your pronouns are: {{user.pronouns}}</h3>
+   
 
-    <p>Welcome to Butterfly Park!</p>
+     <div class="items row isotope boxed grid-view text-center">
+            
+            <!--/.item -->
+            <div class="item grid-sizer col-md-6 col-lg-4">
+              <div class="box bg-white shadow p-30">
+                <figure class="main mb-20 overlay overlay1 rounded"> <router-link class="nav-link" to="/images"><img src="style/images/hands.jpg" alt="" /></router-link>
+                  <figcaption>
+                    <h5 class="text-uppercase from-top mb-0"></h5>
+                  </figcaption>
 
-    <p v-if="$parent.isLoggedIn()">This is your space to explore who you are, who you are becoming, and who you want to be.</p>
+                </figure>
+                <h4 class="mb-0">Get Inspired!</h4>
+              </div>
+              <!-- /.box -->
+            </div>
+            <!--/.item -->
+            <div class="item grid-sizer col-md-6 col-lg-4">
+              <div class="box bg-white shadow p-30">
+                <figure class="main mb-20 overlay overlay1 rounded"><a href="gallery-post.html"><img src="style/images/art/g3-5.jpg" alt="" /></a>
+                  <figcaption>
+                    <h5 class="text-uppercase from-top mb-0"></h5>
+                  </figcaption>
+                </figure>
+                <h4 class="mb-0">About Butterfly Park</h4>
+              </div>
+              <!-- /.box -->
+            </div>
+            <!--/.item -->
+            <div class="item grid-sizer col-md-6 col-lg-4">
+              <div class="box bg-white shadow p-30">
+                <figure class="main mb-20 overlay overlay1 rounded"><a href="gallery-post2.html"><img src="style/images/sun.jpg" alt="" /></a>
+                  <figcaption>
+                    <h5 class="text-uppercase from-top mb-0">See Gallery</h5>
+                  </figcaption>
+                </figure>
+                <h4 class="mb-0">LGBTQ+ History</h4>
+              </div>
+              <!-- /.box -->
+            </div>
+            <!--/.item -->
+            <div class="item grid-sizer col-md-6 col-lg-4">
+              <div class="box bg-white shadow p-30">
+                <figure class="main mb-20 overlay overlay1 rounded"><a href="gallery-post3.html"><img src="style/images/sun.jpg" alt="" /></a>
+                  <figcaption>
+                    <h5 class="text-uppercase from-top mb-0">See Gallery</h5>
+                  </figcaption>
+                </figure>
+                <h4 class="mb-0">LGBTQ+ Media</h4>
+              </div>
+              <!-- /.box -->
+            </div>
+            <!--/.item -->
+            <div class="item grid-sizer col-md-6 col-lg-4">
+              <div class="box bg-white shadow p-30">
+                <figure class="main mb-20 overlay overlay1 rounded"><a href="gallery-post4.html"><img src="style/images/art/g3-8.jpg" alt="" /></a>
+                  <figcaption>
+                    <h5 class="text-uppercase from-top mb-0">See Gallery</h5>
+                  </figcaption>
+                </figure>
+                <h4 class="mb-0">LGBTQ+ Role Models</h4>
+              </div>
+              <!-- /.box -->
+            </div>
+            <!--/.item -->
+            <div class="item grid-sizer col-md-6 col-lg-4">
+              <div class="box bg-white shadow p-30">
+                <figure class="main mb-20 overlay overlay1 rounded"><a href="gallery-post.html"><img src="style/images/face2.jpg" alt="" /></a>
+                  <figcaption>
+                    <h5 class="text-uppercase from-top mb-0">See Gallery</h5>
+                  </figcaption>
+                </figure>
+                <h4 class="mb-0">Resources</h4>
+              </div>
+              <!-- /.box -->
+            </div>
+            <!--/.item -->
+          </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
 
     
 

@@ -1,19 +1,56 @@
 <template>
   <div class="boards-show">
-    <h1>{{ board.title }}</h1>
-    <p>{{ board.description }}</p>
-      <router-link :to="`/boards/${board.id}/edit`">Edit Board</router-link>
-
-    <div v-for="board_image in board.board_images">
-      <img :src="board_image.image.url" alt="" />
-      <button v-on:click="removeImageFromBoard(board_image)">Remove</button>
-      
-      <p>{{ board_image.caption }}</p>
+     
+     <div class="wrapper light-wrapper">
+      <div class="container inner pt-70">
+        <h1 class="heading text-center">{{ board.title }}</h1>
+        <h2 class="sub-heading2 text-center">{{ board.description }}</h2>
+          <router-link :to="`/boards/${board.id}/edit`">Edit Board</router-link>
+      <router-link class="nav-link" to="/images">Explore Images</router-link>
+        <div class="space50"></div>
+        <div class="tiles grid">
+         <div class="items row isotope boxed grid-view text-center" >
+            <div v-for="board_image in board.board_images" class="item grid-sizer col-md-6 col-lg-4" >
+              <div class="box bg-white shadow p-30">
+                <figure class="main polaroid overlay overlay1"><a href="gallery-post.html"><span class="bg"></span><img :src="board_image.image.url" alt=""></a>
+                  <figcaption>
+                    <h5 class="text-uppercase from-top mb-0">See Gallery</h5>
+                  </figcaption>
+                </figure>
+                 <button v-on:click="removeImageFromBoard(board_image)">Remove</button>
+              </div>
+               <p>{{ board_image.caption }}</p>
       <div class="form-group">
         <label>Caption:</label>
         <input type="text" class="form-control" v-model="board_image.caption" />
         <button v-on:click="updateBoardImage(board_image)">Save Caption</button>
       </div>
+              <!-- /.box -->
+            </div>
+            <!--/.item -->
+           
+          </div>
+        </div>
+        <!--/.tiles -->
+      </div>
+      <!-- /.container -->
+    </div>
+
+    <!-- <h1>{{ board.title }}</h1>
+    <p>{{ board.description }}</p> -->
+      <!-- <router-link :to="`/boards/${board.id}/edit`">Edit Board</router-link>
+      <router-link class="nav-link" to="/images">Explore Images</router-link>
+
+    <div v-for="board_image in board.board_images">
+      <img :src="board_image.image.url" alt="" />
+      <button v-on:click="removeImageFromBoard(board_image)">Remove</button> -->
+      
+      <!-- <p>{{ board_image.caption }}</p>
+      <div class="form-group">
+        <label>Caption:</label>
+        <input type="text" class="form-control" v-model="board_image.caption" />
+        <button v-on:click="updateBoardImage(board_image)">Save Caption</button>
+      </div> -->
     </div>
   </div>
 </template>

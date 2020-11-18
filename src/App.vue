@@ -56,24 +56,7 @@
       </div>
     </nav>
     <router-view />
-    <footer class="dark-wrapper inverse-text">
-      <div class="container inner">
-        <div class="row d-md-flex align-items-md-center">
-          <div class="col-md-4 text-center text-md-left">
-            <p class="mb-0">© 2019 Missio. All rights reserved.</p>
-          </div>
-          <!--/column -->
-          <div class="col-md-4 text-center">
-            <img src="#" srcset="style/images/logo-light.png 1x, style/images/logo-light@2x.png 2x" alt="">
-          </div>
-          <!--/column -->
-        
-          <!--/column -->
-        </div>
-        <!--/.row -->
-      </div>
-      <!-- /.container -->
-    </footer>
+   
   </div>
 </template>
 
