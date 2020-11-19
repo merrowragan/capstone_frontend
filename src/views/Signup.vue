@@ -1,36 +1,70 @@
 <template>
   <div class="signup">
-    <form v-on:submit.prevent="submit()">
-      <h1>Signup</h1>
-      <ul>
-        <li class="text-danger" v-for="error in errors">{{ error }}</li>
-      </ul>
-      <div class="form-group">
-        <label>Name:</label> 
-        <input type="text" class="form-control" v-model="name">
+    <div class="wrapper light-wrapper">
+      <div class="container inner">
+        <div class="row">
+          <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+            <h2 class="section-title mb-40 text-center">Signup</h2>
+            <h4 class="section-title mb-40 text-center">All profile information can be changed anytime!</h4>
+            <form v-on:submit.prevent="submit()">
+              <div class="form-group">
+                <label for="exampleInputName1">Name</label><br>
+                <small v-if="name.length < 1" class="text-danger">Name cannot be empty</small>
+                <input type="text" v-model="name" class="form-control" id="exampleInputName1" placeholder="- -">
+              </div>
+              <!-- /.form-group -->
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email:</label><br>
+                 <small v-if="email.length < 1" class="text-danger">Field required </small>
+                <input type="text" v-model="email" class="form-control" id="exampleInputEmail1" placeholder="- -">
+              </div>
+              <!-- /.form-group -->
+              <div class="form-group">
+                <label for="exampleInputEmail1">Pronouns:</label><br>
+                 <small v-if="pronouns.length < 1" class="text-danger">Field required ("I'm not sure" is fine!)</small>
+                <input type="text" v-model="pronouns" class="form-control" id="exampleInputPronouns1" placeholder="- -">
+              </div>
+              <!-- /.form-group -->
+              <div class="form-group">
+                <label for="exampleInputEmail1">Gender:</label><br>
+                <small v-if="gender.length < 1" class="text-danger">Field required ("I'm not sure" is fine!)</small>
+                <input type="text" v-model="gender" class="form-control" id="exampleInputGender1" placeholder="- -">
+              </div>
+              <!-- /.form-group -->
+              <div class="form-group">
+                <label for="exampleInputEmail1">Password:</label><br>
+                <small v-if="password.length < 7" class="text-danger">Must be at least 7 characters</small>
+                <input type="text" v-model="password" class="form-control" id="exampleInputPassword1" placeholder="- -">
+              </div>
+              <!-- /.form-group -->
+              <div class="form-group">
+                <label for="exampleInputEmail1">Password Confirmation:</label><br>
+                <small v-if="password !== passwordConfirmation" class="text-danger">Must match password</small>
+                <input type="text" v-model="passwordConfirmation" class="form-control" id="exampleInputPasswordConfirmation1" placeholder="- -">
+              </div>
+              <!-- conditionals corresponding to the warning messages above -->
+              <input v-if="name.length > 1 && pronouns.length > 1 && gender.length > 1 && password == passwordConfirmation && password.length > 6 && email.length > 1" type="submit" class="btn btn-primary" value="Submit">
+              
+              <!-- /.form-group -->
+            
+            </form>
+            <!-- /form -->
+          </div>
+          <!-- /column -->
+        </div>
+        <!-- /.row -->
       </div>
-      <div class="form-group">
-        <label>Email:</label>
-        <input type="email" class="form-control" v-model="email">
-      </div>
-      <div class="form-group">
-        <label>Pronouns:</label>
-        <input type="email" class="form-control" v-model="pronouns">
-      </div>
-      <div class="form-group">
-        <label>Gender:</label>
-        <input type="email" class="form-control" v-model="gender">
-      </div>
-      <div class="form-group">
-        <label>Password:</label>
-        <input type="password" class="form-control" v-model="password">
-      </div>
-      <div class="form-group">
-        <label>Password confirmation:</label>
-        <input type="password" class="form-control" v-model="passwordConfirmation">
-      </div>
-      <input type="submit" class="btn btn-primary" value="Submit">
-    </form>
+      <!-- /.container -->
+    </div>
+    <!-- <div>
+    <h1>New Board</h1>
+    Title: <input type="text" v-model="title"><br>
+    Description: <input type="text" v-model="description"><br>
+    <button v-on:click="createBoard()">Create</button>
+    </div> -->
+
+  </div>
+    
   </div>
 </template>
 

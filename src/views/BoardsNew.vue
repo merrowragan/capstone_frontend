@@ -4,19 +4,22 @@
       <div class="container inner">
         <div class="row">
           <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+            <div class="divider-icon"><i class="fa fa-heart"></i></div>
             <h2 class="section-title mb-40 text-center">Create New Board</h2>
             <form>
               <div class="form-group">
-                <label for="exampleInputName1">Title</label>
-                <input type="text" v-model="title" class="form-control" id="exampleInputName1" placeholder="Inspiration">
+                <label for="exampleInputName1">Title</label><br>
+                 <small v-if="title.length < 1" class="text-danger">Title required</small>
+                <input type="text" v-model="title" class="form-control" id="exampleInputName1" placeholder="- -">
               </div>
+              
               <!-- /.form-group -->
               <div class="form-group">
                 <label for="exampleInputEmail1">Description</label>
-                <input type="text" v-model="description" class="form-control" id="exampleInputEmail1" placeholder="Coolest stuff ever">
+                <input type="text" v-model="description" class="form-control" id="exampleInputEmail1" placeholder="- -">
               </div>
               <!-- /.form-group -->
-              <button type="button" class="btn" v-on:click="createBoard()">Create</button>
+              <button type="button" class="btn" v-if="title.length > 1" v-on:click="createBoard()">Create</button>
             </form>
             <!-- /form -->
           </div>

@@ -8,6 +8,7 @@
     <div class="form-group">
       <label>Description:</label>
       <input type="text" class="form-control" v-model="board.description">
+    </div>
       <button v-on:click="updateBoard()">Save Changes</button>
       <button v-on:click="destroyBoard()">Delete Board</button>
     </div>

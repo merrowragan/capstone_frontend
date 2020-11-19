@@ -1,14 +1,17 @@
 <template>
   <div id="app">
+    <div class="wrapper light-wrapper">
     <nav class="navbar center navbar-expand-lg">
-      <div class="container flex-lg-column">
+     
+      <div class="container flex-lg-column" >
         <div class="navbar-header">
           <div class="navbar-brand">
+            
             <a href="index.html"
-              ><img
-                src="#"
-                srcset="/style/images/logo.png 1x, /style/images/logo@2x.png 2x"
-                alt=""
+              ><img id="logoImage"
+              class="img-fluid" alt="Responsive image"
+                src="/style/images/logo-edit.jpg"
+               style="max-width: 100%; height: auto;"  
             /></a>
           </div>
           <div class="navbar-hamburger ml-auto d-lg-none d-xl-none">
@@ -19,6 +22,7 @@
             >
               <span></span>
             </button>
+          
           </div>
         </div>
         <!-- /.navbar-header -->
@@ -55,10 +59,15 @@
         </div>
       </div>
     </nav>
+    </div>
     <router-view />
    
   </div>
 </template>
+
+<style>
+
+</style>
 
 <script>
 export default {

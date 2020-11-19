@@ -2,13 +2,16 @@
   <div class="boards-index">
     <div class="wrapper light-wrapper">
       <div class="container inner pt-70">
-        <h1 class="heading text-center">Your Boards!</h1>
-        <h2 class="sub-heading2 text-center">Wow</h2>
+        <div class="divider-icon"><i class="fa fa-heart"></i></div>
+        <h1 class="heading text-center">Your Boards</h1>
+        <h2 class="sub-heading2 text-center">
+
+        </h2>
         <div class="space50"></div>
         <div class="tiles grid">
           <div v-if="boards.length == 0">
-            <h1>You have no boards yet</h1>
-            <router-link to="/boards/new">Create a board!</router-link>
+            <h1>You have no boards yet</h1><br>
+            <router-link class="btn btn-primary" to="/boards/new">Create a board!</router-link>
           </div>
           <div v-else class="items row isotope boxed grid-view text-center"
           >
@@ -22,16 +25,16 @@
                     /><br />
                     <router-link to="/images">Explore Images</router-link>
                   </div> -->
-                  <a href="gallery-post.html"
+                  <a
                     >
                     <img v-if="board.images[0]" :src="board.images[0].url" alt=""
                   />
                     <img v-else src="https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-1.2.1&auto=format&fit=crop&w=2515&q=80" alt=""
                   />
                   </a>
-                  <figcaption>
+                  <!-- <figcaption>
                     <h5 class="text-uppercase from-top mb-0">See Gallery</h5>
-                  </figcaption>
+                  </figcaption> -->
                 </figure>
                 <h4>
                   <router-link class="mb-0" :to="`/boards/${board.id}`">{{
